@@ -65,8 +65,8 @@ public class SlotMachineController {
     public void spinButtonPressed(ActionEvent event) {
         try {
 
-            String balance = currencyTextField.getText().replace("$","");
-            balance = balance.replace(",","");
+            String balance = currencyTextField.getText().replace("$",""); //replacement allows use of currencyTextField as Big Decimal.
+            balance = balance.replace(",",""); //replacement allows use of currencyTextField as Big Decimal.
             BigDecimal amount = new BigDecimal(balance);
             BigDecimal bet = (betText);
 
