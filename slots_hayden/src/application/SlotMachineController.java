@@ -49,14 +49,15 @@ public class SlotMachineController {
     @FXML
     private ImageView thirdSlotImageView;
 
-
     @FXML
     //Method for if Add Funds button is pressed. Adds a value of 1000 to currency.
     public void fundsButtonPressed(ActionEvent event) {
-        BigDecimal amount = new BigDecimal(currencyTextField.getText());
-        currencyTextField.setText(currency.format(String.valueOf(amount.add(BigDecimal.valueOf(1000)))));
-        amount = new BigDecimal(currencyTextField.getText());
-        betSlider.setMax(amount.intValue()); //Sets betslider max to new int value of currency.
+        String balance = currencyTextField.getText().replace("$","");//replacement allows use of currencyTextField as Big Decimal.
+        balance = balance.replace(",",""); //replacement allows use of currencyTextField as Big Decimal.
+        BigDecimal amount = new BigDecimal(balance);
+        amount = amount.add(BigDecimal.valueOf(1000)); //Adds 1000 to currency
+        currencyTextField.setText(currency.format(amount));
+        betSlider.setMax(amount.intValue()); //Sets betSlider max to new int value of currency.
     }
 
     @FXML
@@ -64,8 +65,10 @@ public class SlotMachineController {
     public void spinButtonPressed(ActionEvent event) {
         try {
 
-            BigDecimal amount = new BigDecimal(currencyTextField.getText());
-            BigDecimal bet = new BigDecimal(String.valueOf(betText));
+            String balance = currencyTextField.getText().replace("$","");
+            balance = balance.replace(",","");
+            BigDecimal amount = new BigDecimal(balance);
+            BigDecimal bet = (betText);
 
             //creates six new images for random display results.
             Image Cherries = new Image(Objects.requireNonNull(getClass().getResourceAsStream("/resources/Cherries.jpg")));
@@ -88,25 +91,25 @@ public class SlotMachineController {
             secondSlotImageView.setImage(imageArray[randNum2]);
             thirdSlotImageView.setImage(imageArray[randNum3]);
 
-            bet = new BigDecimal(String.valueOf(betText));
+            
             amount = amount.subtract(bet);
-            currencyTextField.setText(currency.format(String.valueOf(amount)));
+            currencyTextField.setText(currency.format(amount));
 
             //calls class CreateSlotInstance and creates object instance.
             CreateSlotInstance instance = new CreateSlotInstance(firstSlotImageView.getImage(),secondSlotImageView.getImage(),thirdSlotImageView.getImage(),bet);
 
             //find profits through betResults in instance object.
-            BigDecimal profits = new BigDecimal(String.valueOf(instance.betResult()));
+            BigDecimal profits = instance.betResult();
             amount = amount.add(profits);
-            currencyTextField.setText(currency.format(String.valueOf(amount)));
+            currencyTextField.setText(currency.format(amount));
 
             //find results based on displayResult from object instance.
             resultTextField.setText(instance.displayResult());
 
-            betSlider.setMax(amount.intValue()); //Sets betslider max to new int value of currency.
+            betSlider.setMax(amount.intValue()); //Sets betSlider max to new int value of currency.
         }
-        catch(NumberFormatException ex){
-            System.out.print("NumberFormatException");
+        catch(NumberFormatException e){
+            e.printStackTrace();
         }
     }
     //initialize method for listener between betSlider and betLabel.
