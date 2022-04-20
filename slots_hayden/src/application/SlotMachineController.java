@@ -95,12 +95,12 @@ public class SlotMachineController {
             //calls class CreateSlotInstance and creates object instance.
             CreateSlotInstance instance = new CreateSlotInstance(firstSlotImageView.getImage(),secondSlotImageView.getImage(),thirdSlotImageView.getImage(),bet);
 
-            //finds profits through betResults in instance object.
+            //find profits through betResults in instance object.
             BigDecimal profits = new BigDecimal(String.valueOf(instance.betResult()));
             amount = amount.add(profits);
             currencyTextField.setText(currency.format(String.valueOf(amount)));
 
-            //finds results based on displayResult from object instance.
+            //find results based on displayResult from object instance.
             resultTextField.setText(instance.displayResult());
 
             betSlider.setMax(amount.intValue()); //Sets betslider max to new int value of currency.
