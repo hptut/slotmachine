@@ -27,7 +27,7 @@ public class SlotMachine extends Application{
 		stage.setScene(scene);
 		stage.show();
 	}
-	//main method that launches Tip Calculator.
+	//main method that launches Slot Machine.
 	public static void main(String[] args) {
 		launch(args);
 	}
