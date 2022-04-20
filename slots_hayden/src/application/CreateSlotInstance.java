@@ -6,7 +6,7 @@
  * Section: CSC 331-001
  */
 package application;
-
+//comment
 import javafx.scene.image.Image;
 
 import java.math.BigDecimal;
