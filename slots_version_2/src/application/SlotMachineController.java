@@ -1,6 +1,5 @@
 /**
  * PROGRAM PURPOSE: Controller class for SlotMachine.
- * Changes made by:
  * Name: Cece Schweighardt, Rachel Costello, Hayden Franklin, Haley Rogers, Hayden Tuttle
  * Date: 4/15/2022
  * Section: CSC 331-001
