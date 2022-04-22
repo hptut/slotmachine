@@ -22,11 +22,11 @@ public class SlotWheel {
 		roll(); //in order to have an initial state 
 	}
 	
-	//generate a new position for the slot wheel
+	//generates and returns a new position for the slot wheel
 	public int roll() {
-		int newPosition = (int)(Math.random() * imageTable.length);
+		int newPosition = (int)(Math.random() * imageTable.length); //finds random index for image array imageTable
 		currentPosition = newPosition;
-		myView.setImage(getCurrentImage());
+		myView.setImage(getCurrentImage()); //sets image view to image at random array in imageTable
 		return newPosition;
 	}
 	
