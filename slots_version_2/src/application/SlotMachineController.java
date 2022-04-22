@@ -74,7 +74,7 @@ public class SlotMachineController {
     //Functions Triggered by JavaFX Layout
 
     @FXML
-    public void fundsButtonPressed() {		//add funds
+    public void fundsButtonPressed() {		//method adds funds of 5 to currencyTextField
         BigDecimal amount = new BigDecimal(currencyTextField.getText());
         currencyTextField.setText(String.valueOf(amount.add(BigDecimal.valueOf(5))));
         amount = new BigDecimal(currencyTextField.getText());
@@ -82,7 +82,7 @@ public class SlotMachineController {
     }
 
     @FXML
-    public void spinButtonPressed() {
+    public void spinButtonPressed() {		//method for when user presses roll 
         try {
 
             BigDecimal amount = new BigDecimal(currencyTextField.getText());
@@ -110,7 +110,7 @@ public class SlotMachineController {
             System.out.print("NumberFormatException");
         }
     }
-    public void initialize() {
+    public void initialize() {		//initialize method for loading images and calling PayoutTable and SlotWheel class
     	//display settings
         currency.setRoundingMode(RoundingMode.HALF_UP);
         
