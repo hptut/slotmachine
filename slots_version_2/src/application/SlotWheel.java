@@ -1,3 +1,9 @@
+/**
+ * PROGRAM PURPOSE: SlotWheel class for SlotMachine.
+ * Name: Cece Schweighardt, Rachel Costello, Hayden Franklin, Haley Rogers, Hayden Tuttle
+ * Date: 4/24/2022
+ * Section: CSC 331-001
+ */
 package application;
 
 import javafx.scene.image.Image;
