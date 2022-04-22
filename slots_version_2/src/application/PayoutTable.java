@@ -11,7 +11,7 @@ public class PayoutTable {
 	int[] valueTable;	//the point values of each slot image
 	int doubleMult;		//multiplier for two of the same points
 	int tripleMult;		//multiplier for three of the same points
-	String payoutMessage;
+	String payoutMessage;   //string for payout message based on calcualtion
 	
 	//initialize the pay out table
 	public PayoutTable(int[] valueTable, int doubleMult, int tripleMult) {
@@ -50,7 +50,7 @@ public class PayoutTable {
 			}
 		}
 	}
-	
+	//method returns String payoutMessge
 	public String lastPayoutMessage() {
 		return payoutMessage;
 	}
