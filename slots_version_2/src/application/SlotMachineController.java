@@ -1,7 +1,7 @@
 /**
  * PROGRAM PURPOSE: Controller class for SlotMachine.
  * Name: Cece Schweighardt, Rachel Costello, Hayden Franklin, Haley Rogers, Hayden Tuttle
- * Date: 4/15/2022
+ * Date: 4/24/2022
  * Section: CSC 331-001
  */
 
