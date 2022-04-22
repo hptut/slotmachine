@@ -15,6 +15,7 @@ public class SlotWheel {
 	int currentPosition;
 	private ImageView myView;
 
+	//constructor for SlotWheel class array of images and an image view
 	SlotWheel(Image[] imageTable, ImageView view) {
 		this.myView = view;
 		this.imageTable = imageTable;
@@ -29,7 +30,7 @@ public class SlotWheel {
 		return newPosition;
 	}
 	
-	//get the image from the image table of the current position of the slot wheel
+	//return the image from the image table of the current position of the slot wheel
 	public Image getCurrentImage() {
 		return imageTable[currentPosition];
 	}
