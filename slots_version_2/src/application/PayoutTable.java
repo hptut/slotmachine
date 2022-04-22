@@ -22,8 +22,8 @@ public class PayoutTable {
 
 	//calculate and return point value pay out for the current slot display position 
 	public int calculatePayout(int s1Pos, int s2Pos, int s3Pos) {
-		if(s1Pos == s2Pos) {
-			if(s1Pos == s3Pos) {
+		if(s1Pos == s2Pos) {		//if slot wheel position 1 is equal to slot wheel position 2
+			if(s1Pos == s3Pos) {	//if slot wheel position 1 is equal to slot wheel position 3
 				//triple
 				payoutMessage = "Triple!";
 				return valueTable[s1Pos] * tripleMult;
@@ -33,7 +33,7 @@ public class PayoutTable {
 				return valueTable[s1Pos] * doubleMult;
 			}
 		}else {
-			if(s2Pos == s3Pos) {
+			if(s2Pos == s3Pos) { 	//if slot wheel position 2 is equal to slot wheel position 3
 				//double [s2,s3]
 				payoutMessage = "Double";
 				return valueTable[s2Pos] * doubleMult;
