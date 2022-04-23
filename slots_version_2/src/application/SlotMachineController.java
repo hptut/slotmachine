@@ -91,12 +91,14 @@ public class SlotMachineController {
             
            //check to see if there is enough currency to pay for roll
             
-            //remove play cost from credits
+            
             if((amount.compareTo(BigDecimal.valueOf(5))<0)){
                 resultTextField.setText("Currency too low. Add Funds.");
                     return;
             }
-            amount = amount.subtract(BigDecimal.valueOf(playCost));
+            
+		//remove play cost from credits
+		amount = amount.subtract(BigDecimal.valueOf(playCost));
 
            //roll the slot objects
            slot1.roll();
