@@ -92,6 +92,10 @@ public class SlotMachineController {
            //check to see if there is enough currency to pay for roll
             
             //remove play cost from credits
+            if((amount.compareTo(BigDecimal.valueOf(5))<0)){
+                resultTextField.setText("Currency too low. Add Funds.");
+                    return;
+            }
             amount = amount.subtract(BigDecimal.valueOf(playCost));
 
            //roll the slot objects
@@ -113,6 +117,7 @@ public class SlotMachineController {
         }
     }
     public void initialize() {		//initialize method for loading images and calling PayoutTable and SlotWheel class
+    	//display settings
         
         //load images
         imageTable = new Image[toLoad.length];
