@@ -75,17 +75,19 @@ public class SlotMachineController {
 
     @FXML
     public void fundsButtonPressed() {		//method adds funds of 5 to currencyTextField
-        BigDecimal amount = new BigDecimal(currencyTextField.getText());
-        currencyTextField.setText(String.valueOf(amount.add(BigDecimal.valueOf(5))));
-        amount = new BigDecimal(currencyTextField.getText());
-       // betSlider.setMax(amount.intValue());
+        String balance = currencyTextField.getText().replace("$","");//replacement allows use of currencyTextField as Big Decimal.
+        balance = balance.replace(",",""); //replacement allows use of currencyTextField as Big Decimal.
+        BigDecimal amount = new BigDecimal(balance);
+        currencyTextField.setText(currency.format(amount.add(BigDecimal.valueOf(5))));
     }
 
     @FXML
     public void spinButtonPressed() {		//method for when user presses roll 
         try {
 
-            BigDecimal amount = new BigDecimal(currencyTextField.getText());
+            String balance = currencyTextField.getText().replace("$","");//replacement allows use of currencyTextField as Big Decimal.
+            balance = balance.replace(",",""); //replacement allows use of currencyTextField as Big Decimal.
+            BigDecimal amount = new BigDecimal(balance);
             
            //check to see if there is enough currency to pay for roll
             
@@ -98,11 +100,11 @@ public class SlotMachineController {
            slot3.roll();
 
             
-            currencyTextField.setText(String.valueOf(amount));
+            currencyTextField.setText(currency.format(amount));
 
             BigDecimal profits = new BigDecimal(String.valueOf(pTable.calculatePayout(slot1.getCurrentPosition(), slot2.getCurrentPosition(), slot3.getCurrentPosition())));
             amount = amount.add(profits);
-            currencyTextField.setText(String.valueOf(amount));
+            currencyTextField.setText(currency.format(amount));
 
             resultTextField.setText(pTable.lastPayoutMessage());
         }
@@ -111,8 +113,6 @@ public class SlotMachineController {
         }
     }
     public void initialize() {		//initialize method for loading images and calling PayoutTable and SlotWheel class
-    	//display settings
-        currency.setRoundingMode(RoundingMode.HALF_UP);
         
         //load images
         imageTable = new Image[toLoad.length];
