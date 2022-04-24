@@ -31,6 +31,8 @@ public class SlotMachine extends Application{
 		
 		Scene scene = new Scene(root);
 		stage.setTitle("SlotMachine");
+		stage.setMinWidth(600);
+       		stage.setMinHeight(400);
 		stage.setScene(scene);
 		stage.show();
 	}
