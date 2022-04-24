@@ -30,10 +30,14 @@ public class SlotMachine extends Application{
 		Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("SlotMachine.fxml")));
 		
 		Scene scene = new Scene(root);
+		
+		//set window properties
 		stage.setTitle("SlotMachine");
 		stage.setMinWidth(600);
        		stage.setMinHeight(400);
 		stage.setScene(scene);
+		
+		//show window
 		stage.show();
 	}
 	//main method that launches Tip Calculator.
