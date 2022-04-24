@@ -55,6 +55,10 @@ public class SlotMachineController {
 
     @FXML
     private ImageView firstSlotImageView;
+	
+    @FXML
+    private ImageView scorePlate;
+    
     
     @FXML
     private ImageView fundsButton;
@@ -134,6 +138,42 @@ public class SlotMachineController {
 		slot1 = new SlotWheel(imageTable, firstSlotImageView);
         slot2 = new SlotWheel(imageTable, secondSlotImageView);
         slot3 = new SlotWheel(imageTable, thirdSlotImageView);
+	    
+	 //layout setup
+        GridPane gpane = (GridPane) firstSlotImageView.getParent();
+        
+        //auto resize elements 
+        gpane.widthProperty().addListener(
+        		new ChangeListener<Number>() {
+        			@Override
+        			public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+        				//slot imageview sizing
+        				firstSlotImageView.fitWidthProperty().setValue((newValue.intValue()/3));
+        				secondSlotImageView.fitWidthProperty().setValue((newValue.intValue()/3));
+        				thirdSlotImageView.fitWidthProperty().setValue((newValue.intValue()/3));
+        				
+        				//button imageview sizing
+        				scorePlate.fitWidthProperty().setValue((newValue.intValue()/3));
+        				spinButton.fitWidthProperty().setValue((newValue.intValue()/3));
+        				fundsButton.fitWidthProperty().setValue((newValue.intValue()/3));
+        				
+        			}
+        		});
+        gpane.heightProperty().addListener(
+        		new ChangeListener<Number>() {
+        			@Override
+        			public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+        				//slot imageview sizing
+        				firstSlotImageView.fitHeightProperty().setValue((newValue.intValue()/2));
+        				secondSlotImageView.fitHeightProperty().setValue((newValue.intValue()/2));
+        				thirdSlotImageView.fitHeightProperty().setValue((newValue.intValue()/2));
+        				
+        				//button imageview sizing
+        				scorePlate.fitHeightProperty().setValue((newValue.intValue()/3));
+        				spinButton.fitHeightProperty().setValue((newValue.intValue()/4));
+        				fundsButton.fitHeightProperty().setValue((newValue.intValue()/4));
+        			}
+        		});
     }
 
 }
