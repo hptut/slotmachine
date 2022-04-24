@@ -147,7 +147,7 @@ public class SlotMachineController {
         gpane.widthProperty().addListener(
         		new ChangeListener<Number>() {
         			@Override
-        			public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+        			public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {	//listener to link element width to window width
         				//slot imageview sizing
         				firstSlotImageView.fitWidthProperty().setValue((newValue.intValue()/3));
         				secondSlotImageView.fitWidthProperty().setValue((newValue.intValue()/3));
@@ -163,7 +163,7 @@ public class SlotMachineController {
         gpane.heightProperty().addListener(
         		new ChangeListener<Number>() {
         			@Override
-        			public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {
+        			public void changed(ObservableValue<? extends Number> ov, Number oldValue, Number newValue) {	//listener to link element height to window height
         				//slot imageview sizing
         				firstSlotImageView.fitHeightProperty().setValue((newValue.intValue()/2));
         				secondSlotImageView.fitHeightProperty().setValue((newValue.intValue()/2));
