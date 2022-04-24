@@ -19,59 +19,80 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<GridPane hgap="5.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2B2B2B;" vgap="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SlotMachineController">
+<GridPane fx:id="root" hgap="5.0" minHeight="399.0" minWidth="599.0" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #2B2B2B;" vgap="8.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.SlotMachineController">
   <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="33.0" prefWidth="100.0" />
   </columnConstraints>
   <rowConstraints>
-    <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="215.0" vgrow="SOMETIMES" />
-      <RowConstraints maxHeight="273.0" minHeight="10.0" prefHeight="69.0" vgrow="SOMETIMES" />
-    <RowConstraints maxHeight="178.0" minHeight="10.0" prefHeight="74.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="273.0" minHeight="10.0" percentHeight="50.0" prefHeight="215.0" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="273.0" minHeight="10.0" percentHeight="25.0" prefHeight="69.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="178.0" minHeight="10.0" percentHeight="25.0" prefHeight="74.0" vgrow="SOMETIMES" />
   </rowConstraints>
    <children>
-      <ImageView fx:id="secondSlotImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
-         <image>
-            <Image url="@out/production/TipCalculator/application/download.png" />
-         </image>
+      <ImageView fx:id="secondSlotImageView" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="BASELINE">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
       </ImageView>
-      <ImageView fx:id="firstSlotImageView" fitHeight="200.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER">
-         <image>
-            <Image url="@out/production/TipCalculator/application/download.png" />
-         </image>
+      <ImageView fx:id="firstSlotImageView" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="BASELINE">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
       </ImageView>
-      <ImageView fx:id="thirdSlotImageView" fitHeight="200.0" fitWidth="200.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER">
-         <image>
-            <Image url="@out/production/TipCalculator/application/download.png" />
-         </image>
+      <ImageView fx:id="thirdSlotImageView" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BASELINE">
          <cursor>
             <Cursor fx:constant="OPEN_HAND" />
          </cursor>
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin>
       </ImageView>
-      <TextField fx:id="currencyTextField" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="147.0" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <Label text="Currency" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+      <TextField fx:id="currencyTextField" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="25.0" prefWidth="147.0" text="0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets top="20.0" />
+         </GridPane.margin></TextField>
+      <Label text="Currency" textFill="WHITE" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font name="Impact" size="12.0" />
-         </font></Label>
-      <TextField fx:id="resultTextField" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-      <Label text="Result" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         </font>
+         <opaqueInsets>
+            <Insets top="20.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="20.0" />
+         </GridPane.margin></Label>
+      <TextField fx:id="resultTextField" editable="false" focusTraversable="false" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+         <GridPane.margin>
+            <Insets left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin></TextField>
+      <Label text="Result" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
          <font>
             <Font name="Impact" size="12.0" />
-         </font></Label>
-      <ImageView fx:id="fundsButton" fitHeight="150.0" fitWidth="100.0" onMouseClicked="#fundsButtonPressed" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+         </font>
+         <opaqueInsets>
+            <Insets top="20.0" />
+         </opaqueInsets>
+         <GridPane.margin>
+            <Insets bottom="20.0" />
+         </GridPane.margin></Label>
+      <ImageView fx:id="fundsButton" fitHeight="150.0" fitWidth="100.0" onMouseClicked="#fundsButtonPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2">
          <image>
             <Image url="@/resources/coin_slot.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
       </ImageView>
       <ImageView fx:id="spinButton" fitHeight="150.0" fitWidth="100.0" onMouseClicked="#spinButtonPressed" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <cursor>
@@ -80,6 +101,17 @@
          <image>
             <Image url="resources/roll-green.png" />
          </image>
+         <GridPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+         </GridPane.margin>
+      </ImageView>
+      <ImageView fx:id="scorePlate" fitHeight="150.0" fitWidth="180.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" GridPane.valignment="BOTTOM">
+         <image>
+            <Image url="@/resources/slots-scoring.png" />
+         </image>
+         <GridPane.margin>
+            <Insets right="20.0" top="20.0" />
+         </GridPane.margin>
       </ImageView>
    </children>
    <padding>
